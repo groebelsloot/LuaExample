@@ -1,3 +1,6 @@
 -cpp bin
 -main Main
 -lib lua
+-cmd copy *.lua bin
+-cmd cd bin
+-cmd Main.exe

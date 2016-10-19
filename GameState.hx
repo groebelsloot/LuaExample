@@ -12,7 +12,7 @@ class GameState
 
 	//intialize the default game state (new game only)
 	public function new() {
-		//setActorState('kate', 'location', 'office');
+		
 	}
 
 	//The game state should store only things that surpass single actors
@@ -29,6 +29,7 @@ class GameState
 
 	//The actor state stores properties related to particular actors. These things should NOT be stored in the game state
 	public function setActorState(actorId:String, key:String, value:Dynamic):Void {
+		Sys.println("GameEngine: SetActorstate "+actorId + ", " + key + ": " + value);
 		if(!this._actorStates.exists(actorId)) {
 			this._actorStates[actorId] = new Map<String, Dynamic>();
 		}

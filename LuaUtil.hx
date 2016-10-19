@@ -21,6 +21,14 @@ class LuaUtil
 				return gameengine.gamestate.getActorState(actorId, key);
 			}
 		});
+		
+		lua.setVars( {
+			setActorState: function(actorId:String, key:String, value:String) {
+				Sys.println(prefix+"Lua: setActorState("+actorId+","+key+","+value+")");
+				gameengine.gamestate.setActorState(actorId, key, value);
+				return true;
+			}
+		});
 
 		//actor speaks
 		lua.setVars( {

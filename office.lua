@@ -1,6 +1,10 @@
 
 function enter_room()
 	--initialize
+	
+	-- comment the next line to see different results when running
+	setActorState("kate", "location", "office")
+	
 	actorSays("hero", "Allright, I'm in the office!")
 end
 

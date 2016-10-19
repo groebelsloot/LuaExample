@@ -14,6 +14,7 @@ class GameEngine
 	public var running:Bool = true;
 	
 	public var fake_action:String = "";	
+	public var fake_action_counter:Int = 0;
 	
 	public function new() {
 		lua = LuaUtil.setupLUA(this);
@@ -50,17 +51,24 @@ class GameEngine
 			Sys.sleep(0.5);
 			
 			//Fake arriving
-			if (fake_action == "walking") {
-				fake_action = "";
-				actorArrived("hero");
+			if (fake_action != "") {
+				fake_action_counter++;
 			}
-			else if (fake_action == "animating") {
-				fake_action = "";
-				animationFinished("hero", "usedown");
-			}
-			else if (fake_action == "talking") {
-				fake_action = "";
-				actorFinishedSpeaking();
+			
+			//Fake doing actions for 3 frames in a row
+			if (fake_action_counter % 3 == 0) {
+				if (fake_action == "walking") {
+					fake_action = "";
+					actorArrived("hero");
+				}
+				else if (fake_action == "animating") {
+					fake_action = "";
+					animationFinished("hero", "usedown");
+				}
+				else if (fake_action == "talking") {
+					fake_action = "";
+					actorFinishedSpeaking();
+				}
 			}
 		}
 	}
