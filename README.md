@@ -1,7 +1,7 @@
 # LuaExample
 
 ---
-This is the Lua example in Haxe as explained in our Groebelsloot blog post: http://www.groebelsloot.com/?p=508&preview=true.
+This is the Lua example in Haxe as explained in our Groebelsloot blog post: http://www.groebelsloot.com/2016/10/17/adding-gameplay-logic-using-lua/
 This example works with the Haxe cpp target only.
 ---
 
